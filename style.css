@@ -2,7 +2,7 @@
 
 
 
-/* Resetando todos os padrões de navegadores */
+ 
 *{
     margin: 0;
     padding: 0;
@@ -15,8 +15,8 @@ body {
     background-color: #1b2019;
     color: white;
     font-weight: 500;
-    display: flex;   /*  Colocar a imagem do mobile do lado direito */
-    min-height: 100vh;  /*  100vh / 100vw significa 100% de altura e largura em relação a viewport, que é o tamanho total de tela. */
+    display: flex;   
+    min-height: 100vh;  
     min-width: 100vw;
 }
 
@@ -26,7 +26,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* padding: 2rem 4rem; */
 }
 
 main h1 {
@@ -38,20 +37,19 @@ main h1 {
 
 
 main .social-media {
-  display: flex;
-  align-content: center;
+    display: flex;
+    align-content: center;
 }
 
 
 main .social-media img {
-width: 30px;
-margin-left: 2rem; /* Separando as imagens das redes socias que estão tods juntas. */
+    width: 30px;
+    margin-left: 2rem;  
 }
 
 
 
-/* Removendo a margin-left do primeiro filho (logo do Google) para centralizar as imagens de acordo com o texto */
-/*  a:first-child == primeiro filho.    a:last-child == ultimo filho.   a:nth-child(2) == ultiliza por índice dentro dos ().*/
+ 
 main .social-media a:first-child img {
     margin-left: 0;
 }
@@ -59,7 +57,7 @@ main .social-media a:first-child img {
 
 
 
-/* __________________ OR  __________________ */
+ 
 
 
 main .alternative {
@@ -76,7 +74,7 @@ main .alternative span {
 
 main .alternative span::before, main .alternative span::after {
     position: absolute;
-    content: '';     /* sempre que for trabalhar com before e after é necessario criar um content. */
+    content: '';      
     height: 1px;
     width: 100px;
     bottom: 50%;
@@ -90,7 +88,7 @@ main .alternative span::after {
 }
 
 
-/* __________________ OR  __________________ */
+ 
 
 
 
@@ -98,10 +96,10 @@ main .alternative span::after {
 
 main form {
     display: flex;
-    flex-direction: column;  /*  coloca os campos de formulário um abaixo do outro. */
+    flex-direction: column;   
 }
 
-/* Colocando a label um abaixo do outro, junto com os campos de formulário. */
+ 
 main form label {
     display: flex;
     flex-direction: column;
@@ -116,9 +114,9 @@ main form input {
     background-color: #161923;
     width: 300px;
     height: 50px;
-    padding: 0 0.4rem;  /* Espaçamentos das letras dos campos o zero é refenrente ao top e bottom e o 0.5 referente ao left e right. */
-    margin-top: 1rem;  /* Espaçamento da label e o input. */
-    outline: none;     /*  Remover a borda do input quando ele é clicado. */
+    padding: 0 0.4rem;   
+    margin-top: 1rem;   
+    outline: none;      
     color: rgba(166, 166, 166);
     font-size: 1rem;
     border: 1px solid #040B18;
@@ -130,22 +128,19 @@ main form input:hover {
     transition: all .3s ease-in-out;
 }
 
-/* Botão */
+ 
 main form input[type="submit"] {
-    cursor: pointer;   /*A seta do mouse se torna uma mão quando passa por cima do botão. */
-    /* width: 100%; */
+    cursor: pointer;   
     margin-top: 2rem;
     border: none;
     border-radius: 32px;
     background-color: #6C63FF;
     color: white;
     font-size: 1rem;
-    transition: all .3s ease-in-out;  /*Transição da mudança da cor do botão quando passar o mouse por cima. */
-    
-    /* Estudar moda da transição ease-in-out. */
+    transition: all .3s ease-in-out;   
 }
 
-/* Modificando a cor quando o mouse passe por cima do botão */
+ 
 main form input[type="submit"]:hover {
     background-color: #5952d4;
 }
@@ -154,7 +149,7 @@ main form input[type="submit"]:hover {
 section.images {
     width: 45vw;
     display: flex;
-    align-items: flex-end;  /* colocando a imagem mobile no fim da pagina: . */
+    align-items: flex-end; 
     padding-bottom: 2rem;
 }
 
@@ -182,9 +177,6 @@ section.images .circle {
 /* RESPONSIVIDADE */
 
 
-
-/* Comando para verificar o tamanho de tela. */
-/* As modificações irão acontecer entre 950px e 1220px */
 @media only screen and (min-width: 950px) and (max-width: 1200px) {
 
      
@@ -194,17 +186,16 @@ section.images .circle {
      
 }
 
-/* As modificações irão acontecer quando a tela for acima de 1050px */
+ 
 @media only screen and (max-width: 1050px){
 
-    /* Remove a imagem do mobile. */
+    
     section.images {
         display: none;
         visibility: hidden;
     }
 
-    /* Centralizando o form ap´so remover a imagem. */
-    /* Coloca largura de 100vw que é a largura total da nossa página. */
+    
 
     main {
         width: 100vw;
@@ -236,7 +227,7 @@ section.images .circle {
         
     }
     
-    /* Botão */
+ 
     main form input[type="submit"] {
         font-size: 0.8rem;
         
