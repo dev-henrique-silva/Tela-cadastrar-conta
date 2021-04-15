@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+
+
+/* Resetando todos os padrões de navegadores */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1b2019;
+    color: white;
+    font-weight: 500;
+    display: flex;   /*  Colocar a imagem do mobile do lado direito */
+    min-height: 100vh;  /*  100vh / 100vw significa 100% de altura e largura em relação a viewport, que é o tamanho total de tela. */
+    min-width: 100vw;
+}
+
+main {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 2rem 4rem; */
+}
+
+main h1 {
+    color: #8880FE;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+main .social-media {
+  display: flex;
+  align-content: center;
+}
+
+
+main .social-media img {
+width: 30px;
+margin-left: 2rem; /* Separando as imagens das redes socias que estão tods juntas. */
+}
+
+
+
+/* Removendo a margin-left do primeiro filho (logo do Google) para centralizar as imagens de acordo com o texto */
+/*  a:first-child == primeiro filho.    a:last-child == ultimo filho.   a:nth-child(2) == ultiliza por índice dentro dos ().*/
+main .social-media a:first-child img {
+    margin-left: 0;
+}
+
+
+
+
+/* __________________ OR  __________________ */
+
+
+main .alternative {
+    margin-top: 1rem;
+}
+
+main .alternative span {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.3);
+    position: relative;   
+}
+
+
+main .alternative span::before, main .alternative span::after {
+    position: absolute;
+    content: '';     /* sempre que for trabalhar com before e after é necessario criar um content. */
+    height: 1px;
+    width: 100px;
+    bottom: 50%;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.3);
+
+}
+
+main .alternative span::after {
+    left: 30px;
+}
+
+
+/* __________________ OR  __________________ */
+
+
+
+
+
+main form {
+    display: flex;
+    flex-direction: column;  /*  coloca os campos de formulário um abaixo do outro. */
+}
+
+/* Colocando a label um abaixo do outro, junto com os campos de formulário. */
+main form label {
+    display: flex;
+    flex-direction: column;
+}
+
+main form label span {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+main form input {
+    background-color: #161923;
+    width: 300px;
+    height: 50px;
+    padding: 0 0.4rem;  /* Espaçamentos das letras dos campos o zero é refenrente ao top e bottom e o 0.5 referente ao left e right. */
+    margin-top: 1rem;  /* Espaçamento da label e o input. */
+    outline: none;     /*  Remover a borda do input quando ele é clicado. */
+    color: rgba(166, 166, 166);
+    font-size: 1rem;
+    border: 1px solid #040B18;
+    border-radius: 8px;
+}
+
+main form input:hover {
+    background-color: #32394a;
+    transition: all .3s ease-in-out;
+}
+
+/* Botão */
+main form input[type="submit"] {
+    cursor: pointer;   /*A seta do mouse se torna uma mão quando passa por cima do botão. */
+    /* width: 100%; */
+    margin-top: 2rem;
+    border: none;
+    border-radius: 32px;
+    background-color: #6C63FF;
+    color: white;
+    font-size: 1rem;
+    transition: all .3s ease-in-out;  /*Transição da mudança da cor do botão quando passar o mouse por cima. */
+    
+    /* Estudar moda da transição ease-in-out. */
+}
+
+/* Modificando a cor quando o mouse passe por cima do botão */
+main form input[type="submit"]:hover {
+    background-color: #5952d4;
+}
+
+
+section.images {
+    width: 45vw;
+    display: flex;
+    align-items: flex-end;  /* colocando a imagem mobile no fim da pagina: . */
+    padding-bottom: 2rem;
+}
+
+
+section.images img {
+    width: 80%;
+}
+
+
+section.images .circle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #E8CBC0, #636FA4);
+    clip-path: circle(40% at right 80%);
+    z-index: -1;
+}
+
+
+
+
+
+/* RESPONSIVIDADE */
+
+
+
+/* Comando para verificar o tamanho de tela. */
+/* As modificações irão acontecer entre 950px e 1220px */
+@media only screen and (min-width: 950px) and (max-width: 1200px) {
+
+     
+    section.images img {
+        width: 90%;
+    }
+     
+}
+
+/* As modificações irão acontecer quando a tela for acima de 1050px */
+@media only screen and (max-width: 1050px){
+
+    /* Remove a imagem do mobile. */
+    section.images {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* Centralizando o form ap´so remover a imagem. */
+    /* Coloca largura de 100vw que é a largura total da nossa página. */
+
+    main {
+        width: 100vw;
+    }
+
+}
+
+
+@media only screen and (min-width: 250px) and (max-width: 490px) {
+
+    main h1 {
+        font-size: 2rem;
+    }
+
+    main .social-media img {
+        width: 20px;
+    }
+
+
+    main form label span {
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+    
+    main form input {
+        width: 250px;
+        margin-top: 0.7rem;   
+        font-size: 0.8rem;
+        
+    }
+    
+    /* Botão */
+    main form input[type="submit"] {
+        font-size: 0.8rem;
+        
+    }
+
+
+    main .alternative {
+        margin-top: 0.8rem;
+    }
+    
+    main .alternative span {
+        font-size: 0.6rem;
+        
+    }
+
+}
